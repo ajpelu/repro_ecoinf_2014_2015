@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reproducibilidad en Ciencia</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Reproducibilidad en Ciencia">
+  <meta name="author" content="Antonio J. Pérez-Luque">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/monokai.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/codefont.css"></link>
+<link rel=stylesheet href="./assets/css/mainapp.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Reproducibilidad en Ciencia</h1>
+    <h2>Ecoinformática. Curso 2014-2015</h2>
+    <p>Antonio J. Pérez-Luque<br/></p>
+  </hgroup>
+  <article></article>  
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+    </a>
+  </footer>
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <!-- Center image on slide -->
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+
+<script type='text/javascript'>
+$(function() {
+    $("p:has(img)").addClass('centered');
+});
+</script>
+
+<style>
+em {
+  font-style: italic
+}
+strong {
+  font-weight: bold;
+}
+</style>
+
+<!-- Limit image width and height -->
+
+<style type='text/css'>
+img {
+    max-height: 560px;
+    max-width: 964px;
+}
+</style>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="nobackground quote" id="slide-2" style="background:;">
+  <article data-timings="">
+    <p><code>(RAE)</code> 
+<q><strong>Ciencia</strong>: Conjunto de conocimientos obtenidos mediante la observación y el razonamiento, sistemáticamente estructurados y de los que se deducen principios y leyes generales</q></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="smaller quote" id="slide-3" style="background:;">
+  <article data-timings="">
+    <p><q>La ciencia es el conocimiento obtenido mediante la observación de patrones regulares, de razonamientos y de experimentación en ámbitos específicos, a partir de los cuales se generan preguntas, se construyen hipótesis, se deducen principios y se elaboran leyes generales y sistemas organizados por medio de un <strong>método científico</strong></q></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <article data-timings="">
+    <p><img src="images/metodo_cientifico_bebe_en.jpg" alt="metodo"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h1>Crisis de Reproducibilidad</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/the_economist.jpg" alt="fraude ciencia"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h1>Fraude científico</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p align="center"><img src="images/koreano_science.png" height="374" width="469"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p align="center"><img src="images/lemus_ms.png" height="400" width="496"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h1>Retracción</h1>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><br></p>
+
+<p align="center"><img src="images/koreano_science_ret.png" height="450" width="400"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p align="center"><img src="images/lemus.png" height="600" width="400"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="quote smaller" id="slide-8" style="background:;">
+  <article data-timings="">
+    <p align="center"><img src="images/metadata_michener.png" height="500" width="742"></p>
+
+<ul class = "build incremental">
+<li>La investigación no son sólo los resultados que se publican, sino que es el conjunto de programas, código, y datos utilizados para producir los resultados (Gandrud 2014)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h1>Meta-analysis on the effects of temperature on plant phenology</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/request_opendata.png" alt="opendatarequest"></p>
+
+<p><a href="https://dx.doi.org/10.1111/j.1365-2486.2012.02693.x">Wolkovich et al. 2012</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="quote" id="slide-10" style="background:;">
+  <article data-timings="">
+    <p><br>
+<br>
+<br>
+<q align=right>¿Qué entendemos por <br><strong>Reproducible Science</strong>? </q></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="quote" id="slide-11" style="background:;">
+  <article data-timings="">
+    <p><br>
+<br>
+<q> Research results are <strong>replicable</strong> if there is sufficient information available for independent researchers to make the same findings using the same procedures </q>  </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="smaller" id="slide-12" style="background:;">
+  <article data-timings="">
+    <p><br>
+<br>
+<br>
+<img src="images/repro_spectrum.jpg" alt="repro_spectrum"> </p>
+
+<p><a href="https://dx.doi.org/10.1126/science.1213847">Peng 2011</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="quote" id="slide-13" style="background:;">
+  <article data-timings="">
+    <p><br>
+<br>
+<br>
+<q align=right>¿Porqué ha de ser <br><strong>reproducible</strong><br> la investigación? </q></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Por la <em>ciencia</em></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><strong>Estándar</strong>
+
+<ul>
+<li>Los resultados de una investigación no pueden considerarse &quot;contribuciones genuinas&quot; al conocimiento humano hasta que no sean verificadas (<a href="http://dx.doi.org/10.1109/MCSE.2009.19">Stodden 2009</a>).</li>
+<li>Demarcación entre ciencia y no-ciencia</li>
+</ul></li>
+</ul>
+
+<p><img src="images/ciencia_magos.jpg" alt="repro_spectrum"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Por la <em>ciencia</em></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><strong>Evitar duplicación de esfuerzos</strong>
+
+<ul>
+<li>Disminuir la cantidad de tiempo empleado para colectar datos, manipular datos, etc.</li>
+<li>Ayuda a avanzar en la generación de nuevo conocimiento (<a href="https://dx.doi.org/10.1111/j.1365-2486.2012.02693.x">Wolkovich et al. 2012</a>)</li>
+</ul></li>
+</ul>
+
+<p align="center"><img src="images/opendata.png" height="400" width="400"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Por los <em>investigadores</em>  (por ti)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><strong>Mejorar Habitos de trabajo</strong>
+
+<ul>
+<li>Aumentar la facilidad para detectar errores (documentar código)</li>
+<li>Accesibilidad de los pasos llevados a cabo (re-usabilidad)</li>
+<li>Efectividad (evitar duplicidad de esfuerzo)</li>
+</ul></li>
+<li><p><strong>Mejorar Trabajo en equipo</strong></p>
+
+<ul>
+<li>Implementar la reproducibilidad de un proyecto facilita a tus colaboradores (presentes o futuros) ejecutar parte del mismo</li>
+</ul></li>
+<li><p><strong>Facilitar los cambios</strong></p>
+
+<ul>
+<li>Reproducir tus resultados en el futuro próximo (re-análisis, cambios en figuras, etc.)</li>
+</ul></li>
+<li><p><strong>Mayor impacto de nuesta investigación</strong></p>
+
+<ul>
+<li>La investigación que es reproducible contiene mas información (código, acceso a los datos, etc) y por tanto, mas razones para ser usada (y citada, i.e. <a href="http://dx.doi.org/10.1371/journal.pone.0000308">Piwowar et al. 2007</a>)</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="smaller" id="slide-17" style="background:;">
+  <article data-timings="">
+    <p><strong>Aplicar técnicas de reproducibilidad (o al menos los principios) puede hacer que tu investigación sea mas efectiva y mas fácil</strong>
+<br>
+<br></p>
+
+<p><img src="images/metodo_geek.png" alt="metodo_geek"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="quote" id="slide-18" style="background:;">
+  <article data-timings="">
+    <p><br>
+<br>
+<br>
+<q align=right>¿Cómo hacer que nuestra investigación <br> sea mas <strong>reproducible</strong>? </q></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Flujo de Trabajo Científico</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>The old-(<em>traditional</em>) way</h1>
+
+<p><img src="images/workflow_cycle/workflow.png" alt="metodo"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Comunicamos los resultados</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>¿Qué análisis has llevado a cabo para generar una figura? ¿Cómo has llevado a cabo el análisis de las medias? ¿Has tenido en cuenta la correlación entre las variables? ... </li>
+</ul>
+
+<p><br>  </p>
+
+<ul class = "build incremental">
+<li>¿Qué datos has utilizado? ¿Has llevado a cabo un filtro previo de los datos? ¿de qué tipo? ¿Has utilizado valores brutos o valores agregados? ...</li>
+</ul>
+
+<p><br>  </p>
+
+<ul class = "build incremental">
+<li>¿Has probado a llevar a cabo el análisis utilizando la media armónica en vez de la media aritmética? ¿Qué resultados obtendríamos si agregamos los valores por meses en vez de por estaciones? ... </li>
+</ul>
+
+<p><br>  </p>
+
+<ul class = "build incremental">
+<li>¿Podrías incluir en la figura además unas barras de error? ¿Podrías incluir en la tabla los I.C. al 99% en vez de al 95%? </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="quote" id="slide-21" style="background:;">
+  <article data-timings="">
+    <p>Este flujo de trabajo está <strong>roto</strong> </p>
+
+<p><br></p>
+
+<p align="center"><img src="images/workflow_cycle/workflow_roto.png" height="500" width="900"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="quote" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>Consejos prácticos</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br>
+<strong>1. Document everything!<br><br></strong>
+<strong>2. Everything is a (text) file<br><br></strong>
+<strong>3. All files should be human readable<br><br></strong> 
+<strong>4. Explicity tie your files together<br><br></strong>
+<strong>5. Have a plan to organize, store, and make our files available</strong></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <article data-timings="">
+    <p><img src="images/reproducible_plan.png" alt="plan"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h3>Algunas reglas sencillas (<a href="https://dx.doi.org/10.1371/journal.pcbi.1003285">Sandve et al. 2013</a>)</h3>
+  </hgroup>
+  <article data-timings="">
+    <p><strong><code>Rule 1.</code></strong> <strong>For every result, keep track of how it was produced</strong> </p>
+
+<ul>
+<li>Si un resultado puede ser de potencial interés, mantén un registro de como se ha producido. </li>
+<li><code>Mínimo</code>: registrar detalles suficientes sobre los programas, parámetros y procedimientos manuales para ser capaz (al menos tú) de reproducir el resultado cuando pase un tiempo</li>
+</ul>
+
+<p><strong><code>Rule 2.</code></strong> <strong>Avoid manual data manipulation steps</strong> </p>
+
+<ul>
+<li>Los procedimientos manuales son <strong>ineficientes</strong>, propensos a los <strong>errores</strong> y difíciles (sino imposibles) de reproducir. </li>
+<li>Sustituir modificación manual de archivos por uso de comandos o pequeños scripts (mejor comprensión + track errores + fácilmente reproducibles (1-click))</li>
+<li><code>Mínimo</code>: Si la utilización de operaciones manuales no pueden evitarse en tu análisis, anota al menos los archivos que son modificados o movidos y para que propósito</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="codefont centrepre bigger" id="slide-25" style="background:;">
+  <article data-timings="">
+    <p><strong><code>Rule 3.</code></strong> <strong>Archive the exact versions of all external programs used</strong> </p>
+
+<ul>
+<li>Programas y versiones </li>
+<li><code>Mínimo</code>: Anotar nombres y versiones de los programas utilizados (metadatos) </li>
+</ul>
+
+<pre><code class="r">sessionInfo()
+</code></pre>
+
+<p align="center"><img src="images/sessionInfo.png" height="150" width="400"></p>
+
+<pre><code class="r">sink(&quot;sessionInfo.txt&quot;)
+sessionInfo()
+sink()
+</code></pre>
+
+<p><br>
+<a href="http://rstudio.github.io/packrat/">packrat: A Dependency Management System for Projects and their R Package
+Dependencies</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="codefont centrepre bigger" id="slide-26" style="background:;">
+  <article data-timings="">
+    <p><strong><code>Rule 4.</code></strong> <strong>Version Control all custom scripts</strong> </p>
+
+<ul>
+<li>Registrar los cambios realizados en los scripts que utilizamos </li>
+<li><code>Mínimo</code>: Archivar copias de los scripts cada vez que hagamos cambios en ellos, para mantener un registro exahustivo de los cambios que hemos realizado en ellos. </li>
+</ul>
+
+<p><strong><code>Rule 5.</code></strong> <strong>Record all intermediate results, when possible in standardized formats</strong></p>
+
+<ul>
+<li>Tener acceso a resultados intermedios es de gran valor: 
+
+<ul>
+<li>Un vistazo rápido de resultados intermedios puede servirnos para revelar discrepancias, falsas asunciones, etc. que no podemos ver en los resultados finales. </li>
+<li>Parámetros arbitrarios en pasos intermedios</li>
+<li><code>Mínimo</code>: Guardar archivos y resultados intermedios (siempre que el espacio no nos limite)</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="codefont bigger centrepre" id="slide-27" style="background:;">
+  <article data-timings="">
+    <p><strong><code>Rule 6.</code></strong> <strong>For analysis that include randomness, note underlying random seeds</strong></p>
+
+<ul>
+<li>No reproducible. </li>
+</ul>
+
+<pre><code class="r"># Crea un conjunto de datos
+x &lt;- seq(0,30, by=0.5)
+head(x)
+</code></pre>
+
+<pre><code>## [1] 0.0 0.5 1.0 1.5 2.0 2.5
+</code></pre>
+
+<pre><code class="r"># Toma una muestra de 5 individuos
+sample(x, 5)
+</code></pre>
+
+<pre><code>## [1] 16.0  0.0  7.0  9.5  4.0
+</code></pre>
+
+<pre><code class="r">sample(x, 5)
+</code></pre>
+
+<pre><code>## [1] 22.5 25.5  6.5 18.0 19.0
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="codefont bigger centrepre" id="slide-28" style="background:;">
+  <article data-timings="">
+    <p><strong><code>Rule 6.</code></strong> <strong>For analysis that include randomness, note underlying random seeds</strong></p>
+
+<ul>
+<li>Reproducible. </li>
+</ul>
+
+<pre><code class="r">set.seed(1)
+sample(x, 5)
+</code></pre>
+
+<pre><code>## [1]  8.0 11.0 16.5 26.0  5.5
+</code></pre>
+
+<pre><code class="r"># Repite la operación
+set.seed(1)
+sample(x, 5)
+</code></pre>
+
+<pre><code>## [1]  8.0 11.0 16.5 26.0  5.5
+</code></pre>
+
+<ul>
+<li>Semilla inicial en aleatoridad (re-sampling, bootsprating, Monte-Carlo, etc)</li>
+<li><code>Mínimo</code>: Anotar los pasos del análisis que implican aleatoridad (saber donde encontraremos discrepancias)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <article data-timings="">
+    <p><strong><code>Rule 7.</code></strong> <strong>Always store raw dat behind plots</strong> </p>
+
+<ul>
+<li>Capacidad de regenerar figuras de forma sencilla</li>
+</ul>
+
+<p><img src="images/uso.jpg" alt="usos"></p>
+
+<ul>
+<li>Realizar gráficos en R (script), nos permite regenerarlos en 1 solo paso</li>
+<li><code>Mínimo</code>: Anotar que datos forman parte de la base de una figura y como podemos generar esos datos. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="thank-you-slide segue nobackground" id="slide-30">
+  <aside class="gdbar right"><img src="assets/img/"></aside>
+  <article class="flexbox vleft auto-fadein">
+    <h2>Thank You</h2>
+    <p>For more information you can contact.</p>
+
+  </article>
+
+  <p class="auto-fadein" data-config-contact="">
+    <span>gplus</span><a href="http://plus.google.com">http://plus.google.com</a><br>
+    <span>twitter</span><a href="http://twitter.com/ajpelu">http://twitter.com/ajpelu</a><br>
+  </p>
+</slide>
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h2>Sistema de Control de Versiones</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>Â¿QuÃ© es el control de versiones?</h1>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>Lenguajes para el control de versiones</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/git_logo.png" alt="Git"> </p>
+
+<h4><a href="http://git-scm.com/book/en/v2">Chacon S. &amp; Straub (2014). ProGit book. Apress</a></h4>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-33" style="background:;">
+  <hgroup>
+    <h2>Tutorial Git</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>aqui </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="codefont centrepre bigger quote" id="slide-34" style="background:;">
+  <hgroup>
+    <h2>Crear un repositorio nuevo</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Crea un directorio nuevo y Ã¡brelo</li>
+</ul>
+
+<pre><code>mkdir &lt;nombre_directorio&gt;
+</code></pre>
+
+<pre><code>mkdir datos
+</code></pre>
+
+<ul>
+<li>Para <strong>iniciar un repositorio</strong> utilizamos el comando</li>
+</ul>
+
+<pre><code>git init
+</code></pre>
+
+<pre><code>git init datos 
+</code></pre>
+
+<p><br>
+<br></p>
+
+<p><a href="http://overapi.com/linux/">Ayuda sobre comandos</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="codefont centrepre bigger" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>Clonar un directorio</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Repositorio local </li>
+</ul>
+
+<pre><code>git clone /path/to/repository 
+</code></pre>
+
+<pre><code>* Repositorio remoto (`GitHub`)
+
+</code></pre>
+
+<p>git clone username@host:/path/to/repository</p>
+
+<pre><code></code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-36" style="background:;">
+  <hgroup>
+    <h1>Esto sirve</h1>
+  </hgroup>
+  <article data-timings="">
+    <p align="center"><img src="images/metodo_cientifico_bebe_en.jpg" height="700" width="400"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-37" style="background:;">
+  <hgroup>
+    <h2>mas diapos</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="https://github.com/ramnathv/user2014-idocs-slides">https://github.com/ramnathv/user2014-idocs-slides</a></p>
+
+<ul>
+<li>notas karthik: A reproducibility crisis how science goes wrong </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="smaller" id="slide-38" style="background:;">
+  <hgroup>
+    <h1>References and Resources</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Gandrud C (2014) Reproducible research with r and rstudio. R Series. Chapman &amp; Hall/CRC. </p>
+
+<p>King G (1995) Replication, replication. PS: Political Science and Politics, 28(3): 444 - 452. doi:  <a href="http://dx.doi.org/10.2307/420301">10.2307/420301</a></p>
+
+<p>Michener WK, Brunt JW, Helly JJ, Kirchner TB, Stafford SG (1997). Nongeospatial metadata for the ecological sciences. Ecological Applications, 7(1): 330–342. <a href="http://www.esajournals.org/doi/full/10.1890/1051-0761%281997%29007%5B0330%3ANMFTES%5D2.0.CO%3B2">doi</a></p>
+
+<p>Peng RD (2011) Reproducible research in computational science. Science, 334: 1226 - 1227. doi: <a href="https://dx.doi.org/10.1126/science.1213847">10.1126/science.1213847</a></p>
+
+<p>Piwowar HA, Day RS, Fridsma DB (2007) Sharing detailed research data is associated with increased citation rate. PLoS ONE 2(3): e308. doi: <a href="http://dx.doi.org/10.1371/journal.pone.0000308">10.1371/journal.pone.0000308</a></p>
+
+<p>Sandve GK, Nekrutenko A, Taylor J, Hovig E (2013) Ten Simple Rules for Reproducible Computational Research. PLoS Comput Biol 9(10): e1003285. doi: <a href="https://dx.doi.org/10.1371/journal.pcbi.1003285">10.1371/journal.pcbi.1003285</a></p>
+
+<p>Stodden V (2009) The legal framework for reproducible scientific research. Computing in Science &amp; Engineering, 11(1): 35 - 40. doi: <a href="http://dx.doi.org/10.1109/MCSE.2009.19">10.1109/MCSE.2009.19</a></p>
+
+<p>Wolkovich EM, Regetz J &amp; O&#39;Connor MI (2012) Advances in global change research require open science at the individual-level. Global Change Biology, 18, 2102–2110, doi: <a href="https://dx.doi.org/10.1111/j.1365-2486.2012.02693.x">10.1111/j.1365-2486.2012.02693.x</a></p>
+
+<p>The economist 
+Ebd</p>
+
+<p>Reproducibility in Science. A Guide to enhancing reproducibility in scientific results and writing. <a href="http://ropensci.github.io/reproducibility-guide/">R-OpenSci et al</a> </p>
+
+<p><a href="https://coggle.it/diagram/548607a4d215ff3b06948849/0353189d659223de746d754b8d10bca50186a23b2c5bc183a7e195ea4efa2944">Reproducible Science Curriculum</a></p>
+
+<p>Ushey K, McPherson J, Cheng J &amp; Allaire JJ (2014) packrat: A Dependency Management System for Projects and their R Package. R package version 0.4.2-1, <a href="http://CRAN.R-project.org/package=packrat">http://CRAN.R-project.org/package=packrat</a> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title=''>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title=''>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title=''>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Crisis de Reproducibilidad'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Fraude científico'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Retracción'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title=''>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Meta-analysis on the effects of temperature on plant phenology'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title=''>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title=''>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title=''>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title=''>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Por la <em>ciencia</em>'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Por la <em>ciencia</em>'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Por los <em>investigadores</em>  (por ti)'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title=''>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title=''>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Flujo de Trabajo Científico'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Comunicamos los resultados'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title=''>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Consejos prácticos'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title=''>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Algunas reglas sencillas (<a href="https://dx.doi.org/10.1371/journal.pcbi.1003285">Sandve et al. 2013</a>)'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title=''>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title=''>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title=''>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title=''>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title=''>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Thank You'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Sistema de Control de Versiones'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Lenguajes para el control de versiones'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Tutorial Git'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Crear un repositorio nuevo'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Clonar un directorio'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Esto sirve'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='mas diapos'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='References and Resources'>
+         38
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
