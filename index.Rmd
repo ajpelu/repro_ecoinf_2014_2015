@@ -9,6 +9,9 @@ hitheme     : monokai # {monokai, pojoaque, arta, ir_black, idea, magula, asceti
 license     : by-nc-sa
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
+github: 
+  user: ajpelu
+  repo= repro_ecoinf_2014_2015
 ---
 <!-- Center image on slide -->
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
