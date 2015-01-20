@@ -9,9 +9,6 @@ hitheme     : monokai # {monokai, pojoaque, arta, ir_black, idea, magula, asceti
 license     : by-nc-sa
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
-github: 
-  user: ajpelu
-  repo= repro_ecoinf_2014_2015
 ---
 <!-- Center image on slide -->
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
@@ -60,7 +57,7 @@ img {
 <p align="center"><img src="images/koreano_science.png" height="374" width="469"></p>
 
 *** =right
-<p align="center"><img src="images/lemus_ms.png" height="400" width="496"></p>
+<p align="center"><img src="images/lemus_ms.png" height="300" width="450"></p>
 
 --- &twocol
 # Retracción
@@ -261,7 +258,7 @@ __`Rule 6.`__ __For analysis that include randomness, note underlying random see
 ```{r}
 set.seed(1)
 sample(x, 5)
-# Repite la operación
+# Repite la operaci?n
 set.seed(1)
 sample(x, 5)
 ```
@@ -271,7 +268,6 @@ sample(x, 5)
 
 --- 
 
-
 __`Rule 7.`__ __Always store raw dat behind plots__ 
  * Capacidad de regenerar figuras de forma sencilla
 
@@ -280,46 +276,90 @@ __`Rule 7.`__ __Always store raw dat behind plots__
   * Realizar gráficos en R (script), nos permite regenerarlos en 1 solo paso
   * `Mínimo`: Anotar que datos forman parte de la base de una figura y como podemos generar esos datos. 
 
---- {
- tpl: thankyou,
- social: [{title: gplus, href: "http://plus.google.com"}, {title: twitter, href: "http://twitter.com/ajpelu"}]
-}
+---
+initial steps toward reproducible research
+http://kbroman.org/steps2rr/
 
-## Thank You
 
-For more information you can contact.
+--- .quote
+
+<br>
+<br>
+<br>
+<q align=right>¿Cómo gestionamos las <br>__versiones__? </q>
 
 ---
-## Sistema de Control de Versiones
+![final_doc](images/final_doc.png)
+<br>
+[phdcomic](http://phdcomics.com/)
 
-# Â¿QuÃ© es el control de versiones? 
-***code
-El **control de versiones** es un sistema que registra los cambios realizados sobre un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones espec??ficas m??s adelante
+--- 
+![final_doc](images/astorytold.png)
+<br>
+[phdcomic](http://phdcomics.com/)
+
+---
+## ¿Qué es el control de versiones? 
+
+El __control de versiones__ es un sistema que registra los cambios realizados sobre un archivo o conjunto de archivos a lo largo del tiempo, de modo que podamos recuperar versiones específicas más adelante
 * Se puede utilizar sobre cualquier archivo. 
-* Nos permite: 
+* Permite: 
   * Revertir archivos (proyecto) a un estado anterior
-  * Compara cambios a lo largo del tiempo
-  * Facilita la identificaci??n de errores 
+  * Comparar cambios a lo largo del tiempo
+* Facilita la identificación de errores 
 
 --- 
 ## Lenguajes para el control de versiones 
 
+<br>
+<br>
+<p align="center"><img src="images/git_logo.png" height="251" width="600"></p>
 
-![Git](images/git_logo.png) 
+<br><br>
+[ProGit book](http://git-scm.com/book/en/v2) 
 
-#### [Chacon S. & Straub (2014). ProGit book. Apress](http://git-scm.com/book/en/v2) 
+--- &twocol
+## GitHub
+*** =left
+* Un website donde alojar repositorios 
+* Interfaz para explorar repositorios
+* Permite colaborar de una forma más eficaz (programadores):
+ * Compartir repositorio
+ * Ver cambios
+ * Corregir errores 
+ * Discutir y Revisar cambios
+
+*** =right
+<p align="center"><img src="images/github_logo.png" height="300" width="400"></p>
+<br>
+https://github.com/
 
 --- 
+![github view](images/github_view.png)
 
-## Tutorial Git 
+--- 
+![github log](images/github_commit_log.png)
 
+--- 
+![github example](images/github_example.png)
 
-aqui 
+--- 
+## Un sencillo tutorial sobre Git 
+
+Recursos:
+* [Interactive Tutorial Git (CodeSchool)](https://try.github.io/levels/1/challenges/1)
+* [Git - the simple guide (Roger Dudler)](http://rogerdudler.github.io/git-guide/index.es.html)
+* [Git and GitHub (Hadley Wickham)](http://r-pkgs.had.co.nz/git.html)
+* [A basic tutorial to version control using git (Jon Lefcheck)](http://jonlefcheck.net/2013/11/04/a-basic-tutorial-to-version-control-using-git/)
+* [Git/Github guide a minimal tutorial (Karl Broman)](http://kbroman.org/github_tutorial/)
+* [Getting Git Right (Atlassian)](https://www.atlassian.com/git/tutorials/setting-up-a-repository) 
+* [Recopilación de tutoriales (F. Rodríguez-Sánchez)](https://gist.github.com/Pakillo/63c15c700c9c76fe8032)
+
 
 --- .codefont .centrepre .bigger .quote
 
 ## Crear un repositorio nuevo
-* Crea un directorio nuevo y Ã¡brelo
+* Crea un directorio nuevo y ábrelo
 
 ```
 mkdir <nombre_directorio>
@@ -327,6 +367,7 @@ mkdir <nombre_directorio>
 
 ```{}
 mkdir datos
+cd datos
 ```
 
 * Para __iniciar un repositorio__ utilizamos el comando
@@ -335,17 +376,74 @@ mkdir datos
 git init
 ```
 
-```{}
-git init datos 
-```
-
 <br>
 <br>
 
 [Ayuda sobre comandos](http://overapi.com/linux/)
 
---- .codefont .centrepre .bigger
+--- .codefont .centrepre .bigger .quote
 
+* Inspeccionar el directorio
+
+```
+ls 
+ls -a 
+```
+
+```{r, eval=FALSE}
+.  ..  .git
+```
+
+* Añadir cambios 
+
+```{}
+git add <nombre_archivo>
+```
+```
+git add misdatos.md
+```
+* Si quiero añadir todos los archivos 
+
+```
+git add . 
+```
+
+--- .codefont .bigger 
+* Regristrar cambios 
+
+```{}
+git commit -m "Commit message""
+```
+
+```{}
+git commit -m "Escribo mis datos personales en archivo"
+```
+
+```{r eval=FALSE}
+[master (root-commit) 71fe224] Escribo mis datos personales en archivo
+ 1 file changed, 2 insertions(+)
+ create mode 100644 misdatos.md
+```
+
+--- bg:url(images/esquema_git.png)
+
+--- .codefont .centrepre .bigger
+Nuestros cambios están en el __`HEAD`__ (copia local)
+* Queremos __`enviar`__ los cambios a un repositorio remoto
+1. Conectar con un repositorio remoto 
+
+2. Ahora sí, enviar cambios a un repositorio remoto 
+
+
+* Para enviar cambios a un repositorio remoto
+
+```
+git push origin master
+```
+
+--- 
+
+* 
 ## Clonar un directorio
 * Repositorio local 
 
@@ -374,11 +472,14 @@ https://github.com/ramnathv/user2014-idocs-slides
 
 --- .smaller
 # References and Resources
+
+Chacon S & Straub (2014) ProGit book. Apress [pdf](http://git-scm.com/book/en/v2) 
+
 Gandrud C (2014) Reproducible research with r and rstudio. R Series. Chapman & Hall/CRC. 
 
 King G (1995) Replication, replication. PS: Political Science and Politics, 28(3): 444 - 452. doi:  [10.2307/420301](http://dx.doi.org/10.2307/420301)
 
-Michener WK, Brunt JW, Helly JJ, Kirchner TB, Stafford SG (1997). Nongeospatial metadata for the ecological sciences. Ecological Applications, 7(1): 330–342. [doi](http://www.esajournals.org/doi/full/10.1890/1051-0761%281997%29007%5B0330%3ANMFTES%5D2.0.CO%3B2)
+Michener WK, Brunt JW, Helly JJ, Kirchner TB, Stafford SG (1997). Nongeospatial metadata for the ecological sciences. Ecological Applications, 7(1): 330?342. [doi](http://www.esajournals.org/doi/full/10.1890/1051-0761%281997%29007%5B0330%3ANMFTES%5D2.0.CO%3B2)
 
 Peng RD (2011) Reproducible research in computational science. Science, 334: 1226 - 1227. doi: [10.1126/science.1213847](https://dx.doi.org/10.1126/science.1213847)
 
@@ -388,7 +489,7 @@ Sandve GK, Nekrutenko A, Taylor J, Hovig E (2013) Ten Simple Rules for Reproduci
 
 Stodden V (2009) The legal framework for reproducible scientific research. Computing in Science & Engineering, 11(1): 35 - 40. doi: [10.1109/MCSE.2009.19](http://dx.doi.org/10.1109/MCSE.2009.19)
 
-Wolkovich EM, Regetz J & O'Connor MI (2012) Advances in global change research require open science at the individual-level. Global Change Biology, 18, 2102–2110, doi: [10.1111/j.1365-2486.2012.02693.x](https://dx.doi.org/10.1111/j.1365-2486.2012.02693.x)
+Wolkovich EM, Regetz J & O'Connor MI (2012) Advances in global change research require open science at the individual-level. Global Change Biology, 18, 2102?2110, doi: [10.1111/j.1365-2486.2012.02693.x](https://dx.doi.org/10.1111/j.1365-2486.2012.02693.x)
 
 The economist 
 Ebd
@@ -398,3 +499,21 @@ Reproducibility in Science. A Guide to enhancing reproducibility in scientific r
 [Reproducible Science Curriculum](https://coggle.it/diagram/548607a4d215ff3b06948849/0353189d659223de746d754b8d10bca50186a23b2c5bc183a7e195ea4efa2944)
 
 Ushey K, McPherson J, Cheng J & Allaire JJ (2014) packrat: A Dependency Management System for Projects and their R Package. R package version 0.4.2-1, [http://CRAN.R-project.org/package=packrat](http://CRAN.R-project.org/package=packrat) 
+
+
+--- {
+ tpl: thankyou,
+ social: [{title: gplus, href: "http://plus.google.com"}, {title: twitter, href: "http://twitter.com/ajpelu"}]
+}
+
+## Thank You
+
+For more information you can contact.
+
+--- 
+
+Recursos GIt
+https://www.biostat.wisc.edu/~kbroman/talks/GitPrimer.pdf
+
+https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#git
+
