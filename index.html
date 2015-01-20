@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/monokai.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/codefont.css"></link>
 <link rel=stylesheet href="./assets/css/mainapp.css"></link>
+<link rel=stylesheet href="./assets/css/mincodefont.css"></link>
 <link rel=stylesheet href="./assets/css/ribbons.css"></link>
 
   
@@ -710,6 +711,7 @@ sample(x, 5)
 <li><a href="https://try.github.io/levels/1/challenges/1">Interactive Tutorial Git (CodeSchool)</a></li>
 <li><a href="http://rogerdudler.github.io/git-guide/index.es.html">Git - the simple guide (Roger Dudler)</a></li>
 <li><a href="http://r-pkgs.had.co.nz/git.html">Git and GitHub (Hadley Wickham)</a></li>
+<li><a href="https://www.biostat.wisc.edu/%7Ekbroman/talks/GitPrimer.pdf">A brief introduction to git &amp; GitHub (Karl Broman &amp; Samuel G. Younkin)</a></li>
 <li><a href="http://jonlefcheck.net/2013/11/04/a-basic-tutorial-to-version-control-using-git/">A basic tutorial to version control using git (Jon Lefcheck)</a></li>
 <li><a href="http://kbroman.org/github_tutorial/">Git/Github guide a minimal tutorial (Karl Broman)</a></li>
 <li><a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository">Getting Git Right (Atlassian)</a> </li>
@@ -753,13 +755,15 @@ cd datos
 </slide>
 
 <slide class="codefont centrepre bigger quote" id="slide-42" style="background:;">
+  <hgroup>
+    <h2>Añadir cambios</h2>
+  </hgroup>
   <article data-timings="">
     <ul>
 <li>Inspeccionar el directorio</li>
 </ul>
 
-<pre><code>ls 
-ls -a 
+<pre><code>ls -a 
 </code></pre>
 
 <pre><code class="r">.  ..  .git
@@ -787,12 +791,11 @@ ls -a
 </slide>
 
 <slide class="codefont bigger" id="slide-43" style="background:;">
+  <hgroup>
+    <h2>Registrar cambios</h2>
+  </hgroup>
   <article data-timings="">
-    <ul>
-<li>Regristrar cambios </li>
-</ul>
-
-<pre><code>git commit -m &quot;Commit message&quot;&quot;
+    <pre><code>git commit -m &quot;Commit message&quot;&quot;
 </code></pre>
 
 <pre><code>git commit -m &quot;Escribo mis datos personales en archivo&quot;
@@ -814,134 +817,152 @@ ls -a
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="codefont centrepre bigger" id="slide-45" style="background:;">
+<slide class="minicodefont bigger" id="slide-45" style="background:;">
+  <hgroup>
+    <h2>Enviar cambios</h2>
+  </hgroup>
   <article data-timings="">
     <p>Nuestros cambios están en el <strong><code>HEAD</code></strong> (copia local)</p>
 
 <ul>
-<li>Queremos <strong><code>enviar</code></strong> los cambios a un repositorio remoto</li>
-<li>Conectar con un repositorio remoto </li>
-</ul>
-
-<ol>
-<li>Ahora sí, enviar cambios a un repositorio remoto </li>
-</ol>
+<li>Queremos <strong><code>enviar</code></strong> los cambios a un repositorio remoto:
 
 <ul>
-<li>Para enviar cambios a un repositorio remoto</li>
+<li>Conectar con un repositorio remoto (¡ojo necesitamos crear uno o clonarlo!)</li>
+</ul></li>
+</ul>
+
+<pre><code>git remote add origin &lt;server&gt;
+</code></pre>
+
+<pre><code>git remote add origin https://github.com/ajpelu/ecoinformatica_2014_2015_ajpelu.git
+</code></pre>
+
+<ul>
+<li>Para enviar cambios (una vez conectados) a un repositorio remoto </li>
 </ul>
 
 <pre><code>git push origin master
 </code></pre>
+
+<ul>
+<li>Nos pedirá usuario y contraseña. </li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h2>Reto 4_1</h2>
+  </hgroup>
   <article data-timings="">
     <ul>
-<li>
-## Clonar un directorio</li>
-<li>Repositorio local </li>
-</ul>
-
-<pre><code>git clone /path/to/repository 
-</code></pre>
-
-<pre><code>* Repositorio remoto (`GitHub`)
-
-</code></pre>
-
-<p>git clone username@host:/path/to/repository</p>
-
-<pre><code></code></pre>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-47" style="background:;">
-  <hgroup>
-    <h1>Esto sirve</h1>
-  </hgroup>
-  <article data-timings="">
-    <p align="center"><img src="images/metodo_cientifico_bebe_en.jpg" height="700" width="400"></p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-48" style="background:;">
-  <hgroup>
-    <h2>mas diapos</h2>
-  </hgroup>
-  <article data-timings="">
-    <p><a href="https://github.com/ramnathv/user2014-idocs-slides">https://github.com/ramnathv/user2014-idocs-slides</a></p>
-
-<ul>
-<li>notas karthik: A reproducibility crisis how science goes wrong </li>
+<li><p>Crear una cuenta en <a href="https://github.com">github</a> </p></li>
+<li><p>Crear un repositorio llamado <strong><code>ecoinfo_2014_2015_reto_4_1</code></strong> </p></li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="smaller" id="slide-49" style="background:;">
+<slide class="codefont bigger quote" id="slide-47" style="background:;">
+  <hgroup>
+    <h2>Clonar un directorio</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Importante para reproducibilidad</li>
+<li>Colaboración </li>
+<li>Repositorio remoto (<code>GitHub</code>)</li>
+</ul>
+
+<p>comando: </p>
+
+<pre><code>git clone username@host:/path/to/repository
+</code></pre>
+
+<p><br>
+ejemplo:</p>
+
+<pre><code>git clone git@github.com:iecolab/ecoinformatica_2014_2015_ajpelu.git 
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="codefont centrepre bigger quote" id="slide-48" style="background:;">
+  <hgroup>
+    <h2>Actualizar, fusionar</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Si queremos actualizar un repositorio local al último cambio </li>
+</ul>
+
+<pre><code>git pull  
+</code></pre>
+
+<pre><code>git pull origin master 
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-49" style="background:;">
+  <hgroup>
+    <h2>Reto 4_2</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Clonar el repositorio <a href="https://github.com/iEcolab/ecoinformatica_2014_2015">GitHub</a> de la asignatura  </p></li>
+<li><p>Subir todos tus retos del resto de la asignatura a su carpeta correspondiente</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-50" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="smaller" id="slide-51" style="background:;">
   <hgroup>
     <h1>References and Resources</h1>
   </hgroup>
   <article data-timings="">
-    <p>Chacon S &amp; Straub (2014) ProGit book. Apress <a href="http://git-scm.com/book/en/v2">pdf</a> </p>
-
-<p>Gandrud C (2014) Reproducible research with r and rstudio. R Series. Chapman &amp; Hall/CRC. </p>
-
-<p>King G (1995) Replication, replication. PS: Political Science and Politics, 28(3): 444 - 452. doi:  <a href="http://dx.doi.org/10.2307/420301">10.2307/420301</a></p>
-
-<p>Michener WK, Brunt JW, Helly JJ, Kirchner TB, Stafford SG (1997). Nongeospatial metadata for the ecological sciences. Ecological Applications, 7(1): 330?342. <a href="http://www.esajournals.org/doi/full/10.1890/1051-0761%281997%29007%5B0330%3ANMFTES%5D2.0.CO%3B2">doi</a></p>
-
-<p>Peng RD (2011) Reproducible research in computational science. Science, 334: 1226 - 1227. doi: <a href="https://dx.doi.org/10.1126/science.1213847">10.1126/science.1213847</a></p>
-
-<p>Piwowar HA, Day RS, Fridsma DB (2007) Sharing detailed research data is associated with increased citation rate. PLoS ONE 2(3): e308. doi: <a href="http://dx.doi.org/10.1371/journal.pone.0000308">10.1371/journal.pone.0000308</a></p>
-
-<p>Sandve GK, Nekrutenko A, Taylor J, Hovig E (2013) Ten Simple Rules for Reproducible Computational Research. PLoS Comput Biol 9(10): e1003285. doi: <a href="https://dx.doi.org/10.1371/journal.pcbi.1003285">10.1371/journal.pcbi.1003285</a></p>
-
-<p>Stodden V (2009) The legal framework for reproducible scientific research. Computing in Science &amp; Engineering, 11(1): 35 - 40. doi: <a href="http://dx.doi.org/10.1109/MCSE.2009.19">10.1109/MCSE.2009.19</a></p>
-
-<p>Wolkovich EM, Regetz J &amp; O&#39;Connor MI (2012) Advances in global change research require open science at the individual-level. Global Change Biology, 18, 2102?2110, doi: <a href="https://dx.doi.org/10.1111/j.1365-2486.2012.02693.x">10.1111/j.1365-2486.2012.02693.x</a></p>
-
-<p>The economist 
-Ebd</p>
-
-<p>Reproducibility in Science. A Guide to enhancing reproducibility in scientific results and writing. <a href="http://ropensci.github.io/reproducibility-guide/">R-OpenSci et al</a> </p>
-
-<p><a href="https://coggle.it/diagram/548607a4d215ff3b06948849/0353189d659223de746d754b8d10bca50186a23b2c5bc183a7e195ea4efa2944">Reproducible Science Curriculum</a></p>
-
-<p>Ushey K, McPherson J, Cheng J &amp; Allaire JJ (2014) packrat: A Dependency Management System for Projects and their R Package. R package version 0.4.2-1, <a href="http://CRAN.R-project.org/package=packrat">http://CRAN.R-project.org/package=packrat</a> </p>
+    <ul>
+<li><p>Chacon S &amp; Straub (2014) ProGit book. Apress <a href="http://git-scm.com/book/en/v2">pdf</a> </p></li>
+<li><p>Gandrud C (2014) Reproducible research with r and rstudio. R Series. Chapman &amp; Hall/CRC. </p></li>
+<li><p>King G (1995) Replication, replication. PS: Political Science and Politics, 28(3): 444 - 452. doi:  <a href="http://dx.doi.org/10.2307/420301">10.2307/420301</a></p></li>
+<li><p>Michener WK, Brunt JW, Helly JJ, Kirchner TB, Stafford SG (1997). Nongeospatial metadata for the ecological sciences. Ecological Applications, 7(1): 330?342. <a href="http://www.esajournals.org/doi/full/10.1890/1051-0761%281997%29007%5B0330%3ANMFTES%5D2.0.CO%3B2">doi</a></p></li>
+<li><p>Peng RD (2011) Reproducible research in computational science. Science, 334: 1226 - 1227. doi: <a href="https://dx.doi.org/10.1126/science.1213847">10.1126/science.1213847</a></p></li>
+<li><p>Piwowar HA, Day RS, Fridsma DB (2007) Sharing detailed research data is associated with increased citation rate. PLoS ONE 2(3): e308. doi: <a href="http://dx.doi.org/10.1371/journal.pone.0000308">10.1371/journal.pone.0000308</a></p></li>
+<li><p>Sandve GK, Nekrutenko A, Taylor J, Hovig E (2013) Ten Simple Rules for Reproducible Computational Research. PLoS Comput Biol 9(10): e1003285. doi: <a href="https://dx.doi.org/10.1371/journal.pcbi.1003285">10.1371/journal.pcbi.1003285</a></p></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="thank-you-slide segue nobackground" id="slide-50">
-  <aside class="gdbar right"><img src="assets/img/"></aside>
-  <article class="flexbox vleft auto-fadein">
-    <h2>Thank You</h2>
-    <p>For more information you can contact.</p>
-
-  </article>
-
-  <p class="auto-fadein" data-config-contact="">
-    <span>gplus</span><a href="http://plus.google.com">http://plus.google.com</a><br>
-    <span>twitter</span><a href="http://twitter.com/ajpelu">http://twitter.com/ajpelu</a><br>
-  </p>
-</slide>
-<slide class="" id="slide-51" style="background:;">
+<slide class="smaller" id="slide-52" style="background:;">
+  <hgroup>
+    <h1>References and Resources</h1>
+  </hgroup>
   <article data-timings="">
-    <p>Recursos GIt
-<a href="https://www.biostat.wisc.edu/%7Ekbroman/talks/GitPrimer.pdf">https://www.biostat.wisc.edu/~kbroman/talks/GitPrimer.pdf</a></p>
-
-<p><a href="https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#git">https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#git</a></p>
+    <ul>
+<li>Stodden V (2009) The legal framework for reproducible scientific research. Computing in Science &amp; Engineering, 11(1): 35 - 40. doi: <a href="http://dx.doi.org/10.1109/MCSE.2009.19">10.1109/MCSE.2009.19</a></li>
+<li>Wolkovich EM, Regetz J &amp; O&#39;Connor MI (2012) Advances in global change research require open science at the individual-level. Global Change Biology, 18, 2102?2110, doi: <a href="https://dx.doi.org/10.1111/j.1365-2486.2012.02693.x">10.1111/j.1365-2486.2012.02693.x</a></li>
+<li>Reproducibility in Science. A Guide to enhancing reproducibility in scientific results and writing. <a href="http://ropensci.github.io/reproducibility-guide/">R-OpenSci et al</a><br></li>
+<li><a href="https://coggle.it/diagram/548607a4d215ff3b06948849/0353189d659223de746d754b8d10bca50186a23b2c5bc183a7e195ea4efa2944">Reproducible Science Curriculum</a></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -1199,13 +1220,13 @@ Ebd</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=42 title=''>
+        data-slide=42 title='Añadir cambios'>
          42
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=43 title=''>
+        data-slide=43 title='Registrar cambios'>
          43
       </a>
     </li>
@@ -1217,44 +1238,50 @@ Ebd</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=45 title=''>
+        data-slide=45 title='Enviar cambios'>
          45
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title=''>
+        data-slide=46 title='Reto 4_1'>
          46
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=47 title='Esto sirve'>
+        data-slide=47 title='Clonar un directorio'>
          47
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=48 title='mas diapos'>
+        data-slide=48 title='Actualizar, fusionar'>
          48
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=49 title='References and Resources'>
+        data-slide=49 title='Reto 4_2'>
          49
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=50 title='Thank You'>
+        data-slide=50 title=''>
          50
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=51 title=''>
+        data-slide=51 title='References and Resources'>
          51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='References and Resources'>
+         52
       </a>
     </li>
   </ul>

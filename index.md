@@ -383,6 +383,7 @@ Recursos:
 * [Interactive Tutorial Git (CodeSchool)](https://try.github.io/levels/1/challenges/1)
 * [Git - the simple guide (Roger Dudler)](http://rogerdudler.github.io/git-guide/index.es.html)
 * [Git and GitHub (Hadley Wickham)](http://r-pkgs.had.co.nz/git.html)
+* [A brief introduction to git & GitHub (Karl Broman & Samuel G. Younkin)](https://www.biostat.wisc.edu/~kbroman/talks/GitPrimer.pdf)
 * [A basic tutorial to version control using git (Jon Lefcheck)](http://jonlefcheck.net/2013/11/04/a-basic-tutorial-to-version-control-using-git/)
 * [Git/Github guide a minimal tutorial (Karl Broman)](http://kbroman.org/github_tutorial/)
 * [Getting Git Right (Atlassian)](https://www.atlassian.com/git/tutorials/setting-up-a-repository) 
@@ -415,11 +416,10 @@ git init
 [Ayuda sobre comandos](http://overapi.com/linux/)
 
 --- .codefont .centrepre .bigger .quote
-
+## Añadir cambios 
 * Inspeccionar el directorio
 
 ```
-ls 
 ls -a 
 ```
 
@@ -443,7 +443,7 @@ git add .
 ```
 
 --- .codefont .bigger 
-* Regristrar cambios 
+## Registrar cambios 
 
 ```{}
 git commit -m "Commit message""
@@ -462,93 +462,101 @@ git commit -m "Escribo mis datos personales en archivo"
 
 --- bg:url(images/esquema_git.png)
 
---- .codefont .centrepre .bigger
+--- .minicodefont .bigger
+## Enviar cambios 
 Nuestros cambios están en el __`HEAD`__ (copia local)
-* Queremos __`enviar`__ los cambios a un repositorio remoto
-1. Conectar con un repositorio remoto 
+* Queremos __`enviar`__ los cambios a un repositorio remoto:
+  * Conectar con un repositorio remoto (¡ojo necesitamos crear uno o clonarlo!)
+  
+```
+git remote add origin <server>
+```
 
-2. Ahora sí, enviar cambios a un repositorio remoto 
+```
+git remote add origin https://github.com/ajpelu/ecoinformatica_2014_2015_ajpelu.git
+```
 
-
-* Para enviar cambios a un repositorio remoto
+* Para enviar cambios (una vez conectados) a un repositorio remoto 
 
 ```
 git push origin master
 ```
 
+* Nos pedirá usuario y contraseña. 
+
 --- 
+## Reto 4_1 
+* Crear una cuenta en [github](https://github.com) 
 
-* 
+* Crear un repositorio llamado __`ecoinfo_2014_2015_reto_4_1`__ 
+
+--- .codefont .bigger .quote
 ## Clonar un directorio
-* Repositorio local 
 
-```
-git clone /path/to/repository 
-```
-
-```
+* Importante para reproducibilidad
+* Colaboración 
 * Repositorio remoto (`GitHub`)
 
-```
+comando: 
+```{}
 git clone username@host:/path/to/repository
 ```
+<br>
+ejemplo:
+```
+git clone git@github.com:iecolab/ecoinformatica_2014_2015_ajpelu.git 
+```
 
+--- .codefont .centrepre .bigger .quote
+## Actualizar, fusionar 
 
----
-# Esto sirve
-<p align="center"><img src="images/metodo_cientifico_bebe_en.jpg" height="700" width="400"></p>
+* Si queremos actualizar un repositorio local al último cambio 
+
+```
+git pull  
+```
+
+```
+git pull origin master 
+```
 
 --- 
-## mas diapos
+## Reto 4_2
+* Clonar el repositorio [GitHub](https://github.com/iEcolab/ecoinformatica_2014_2015) de la asignatura  
 
-https://github.com/ramnathv/user2014-idocs-slides
+* Subir todos tus retos del resto de la asignatura a su carpeta correspondiente
 
-- notas karthik: A reproducibility crisis how science goes wrong 
+--- 
+
+
+
+
 
 --- .smaller
 # References and Resources
 
-Chacon S & Straub (2014) ProGit book. Apress [pdf](http://git-scm.com/book/en/v2) 
+* Chacon S & Straub (2014) ProGit book. Apress [pdf](http://git-scm.com/book/en/v2) 
 
-Gandrud C (2014) Reproducible research with r and rstudio. R Series. Chapman & Hall/CRC. 
+* Gandrud C (2014) Reproducible research with r and rstudio. R Series. Chapman & Hall/CRC. 
 
-King G (1995) Replication, replication. PS: Political Science and Politics, 28(3): 444 - 452. doi:  [10.2307/420301](http://dx.doi.org/10.2307/420301)
+* King G (1995) Replication, replication. PS: Political Science and Politics, 28(3): 444 - 452. doi:  [10.2307/420301](http://dx.doi.org/10.2307/420301)
 
-Michener WK, Brunt JW, Helly JJ, Kirchner TB, Stafford SG (1997). Nongeospatial metadata for the ecological sciences. Ecological Applications, 7(1): 330?342. [doi](http://www.esajournals.org/doi/full/10.1890/1051-0761%281997%29007%5B0330%3ANMFTES%5D2.0.CO%3B2)
+* Michener WK, Brunt JW, Helly JJ, Kirchner TB, Stafford SG (1997). Nongeospatial metadata for the ecological sciences. Ecological Applications, 7(1): 330?342. [doi](http://www.esajournals.org/doi/full/10.1890/1051-0761%281997%29007%5B0330%3ANMFTES%5D2.0.CO%3B2)
 
-Peng RD (2011) Reproducible research in computational science. Science, 334: 1226 - 1227. doi: [10.1126/science.1213847](https://dx.doi.org/10.1126/science.1213847)
+* Peng RD (2011) Reproducible research in computational science. Science, 334: 1226 - 1227. doi: [10.1126/science.1213847](https://dx.doi.org/10.1126/science.1213847)
 
-Piwowar HA, Day RS, Fridsma DB (2007) Sharing detailed research data is associated with increased citation rate. PLoS ONE 2(3): e308. doi: [10.1371/journal.pone.0000308](http://dx.doi.org/10.1371/journal.pone.0000308)
+* Piwowar HA, Day RS, Fridsma DB (2007) Sharing detailed research data is associated with increased citation rate. PLoS ONE 2(3): e308. doi: [10.1371/journal.pone.0000308](http://dx.doi.org/10.1371/journal.pone.0000308)
 
-Sandve GK, Nekrutenko A, Taylor J, Hovig E (2013) Ten Simple Rules for Reproducible Computational Research. PLoS Comput Biol 9(10): e1003285. doi: [10.1371/journal.pcbi.1003285](https://dx.doi.org/10.1371/journal.pcbi.1003285)
+* Sandve GK, Nekrutenko A, Taylor J, Hovig E (2013) Ten Simple Rules for Reproducible Computational Research. PLoS Comput Biol 9(10): e1003285. doi: [10.1371/journal.pcbi.1003285](https://dx.doi.org/10.1371/journal.pcbi.1003285)
 
-Stodden V (2009) The legal framework for reproducible scientific research. Computing in Science & Engineering, 11(1): 35 - 40. doi: [10.1109/MCSE.2009.19](http://dx.doi.org/10.1109/MCSE.2009.19)
-
-Wolkovich EM, Regetz J & O'Connor MI (2012) Advances in global change research require open science at the individual-level. Global Change Biology, 18, 2102?2110, doi: [10.1111/j.1365-2486.2012.02693.x](https://dx.doi.org/10.1111/j.1365-2486.2012.02693.x)
-
-The economist 
-Ebd
-
-Reproducibility in Science. A Guide to enhancing reproducibility in scientific results and writing. [R-OpenSci et al](http://ropensci.github.io/reproducibility-guide/) 
-
-[Reproducible Science Curriculum](https://coggle.it/diagram/548607a4d215ff3b06948849/0353189d659223de746d754b8d10bca50186a23b2c5bc183a7e195ea4efa2944)
-
-Ushey K, McPherson J, Cheng J & Allaire JJ (2014) packrat: A Dependency Management System for Projects and their R Package. R package version 0.4.2-1, [http://CRAN.R-project.org/package=packrat](http://CRAN.R-project.org/package=packrat) 
+--- .smaller
+# References and Resources
+* Stodden V (2009) The legal framework for reproducible scientific research. Computing in Science & Engineering, 11(1): 35 - 40. doi: [10.1109/MCSE.2009.19](http://dx.doi.org/10.1109/MCSE.2009.19)
+* Wolkovich EM, Regetz J & O'Connor MI (2012) Advances in global change research require open science at the individual-level. Global Change Biology, 18, 2102?2110, doi: [10.1111/j.1365-2486.2012.02693.x](https://dx.doi.org/10.1111/j.1365-2486.2012.02693.x)
+* Reproducibility in Science. A Guide to enhancing reproducibility in scientific results and writing. [R-OpenSci et al](http://ropensci.github.io/reproducibility-guide/)  
+* [Reproducible Science Curriculum](https://coggle.it/diagram/548607a4d215ff3b06948849/0353189d659223de746d754b8d10bca50186a23b2c5bc183a7e195ea4efa2944)
 
 
---- {
- tpl: thankyou,
- social: [{title: gplus, href: "http://plus.google.com"}, {title: twitter, href: "http://twitter.com/ajpelu"}]
-}
 
-## Thank You
 
-For more information you can contact.
-
---- 
-
-Recursos GIt
-https://www.biostat.wisc.edu/~kbroman/talks/GitPrimer.pdf
-
-https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#git
 
