@@ -192,8 +192,9 @@ __3. All files should be human readable<br><br>__
 __4. Explicity tie your files together<br><br>__
 __5. Have a plan to organize, store, and make our files available__
 
---- bg=#EEE
-![plan](images/reproducible_plan.png)
+--- 
+## The big picture 
+![big_picture](images/big_picture.png)
 
 --- 
 ### Algunas reglas sencillas ([Sandve et al. 2013](https://dx.doi.org/10.1371/journal.pcbi.1003285))
@@ -277,9 +278,46 @@ __`Rule 7.`__ __Always store raw dat behind plots__
   * `Mínimo`: Anotar que datos forman parte de la base de una figura y como podemos generar esos datos. 
 
 ---
-initial steps toward reproducible research
-http://kbroman.org/steps2rr/
+## Algunos recursos 
 
+* [Reproducibility Guide (ROpenSci and others contributors)](http://ropensci.github.io/reproducibility-guide/contributors/)
+
+* [Initial steps toward reproducible research (Karl Broman)](http://kbroman.org/steps2rr/)
+
+<p align="center"><img src="images/reproducible_plan.png" height="410" width="522"></p>
+
+--- .quote
+
+<br>
+<br>
+<br>
+<q align=right>¿Cómo generar informes <br>__reproducibles__? </q>
+
+--- .codefont .centrepre .bigger .quote
+## Markdown 
+* Es un lenguaje de marcas sencillo con una sintáxis de texto plano 
+* Permite agregar formatos a textos de una forma sencilla 
+* .md
+* Tutoriales:
+  * [Markdowntutorial](http://markdowntutorial.com/)
+
+## R + Markdown = Rmarkdown 
+* Permite reproducibilidad total
+* Dinámico (1 click)
+* Permite generar informes, documentos, presentaciones, etc. [ejemplo artículo](https://github.com/karthik/markdown_science)
+* Tutoriales
+  * [R Markdown — Dynamic Documents for R](http://rmarkdown.rstudio.com/)
+  * [Reproducible Research with Rmarkdown](http://pakillo.github.io/Rmarkdown_tutorial/) 
+  * [Reproducible Research with R and RStudio](http://www.crcpress.com/product/isbn/9781466572843) 
+  
+
+--- 
+## Ejemplos 
+<p align="center"><img src="images/rmarkdown_rstudio.png" height="273" width="489"></p>
+
+
+* [Evaluación de la sequía en los últimos 110 años en California](https://github.com/macroecology/Drought_CA/blob/master/pdsi/averagePdsi/average_pdsi_year.md)
+* [Análisis de variables climáticas en el periodo 1960-2010 en Sierra Nevada](https://github.com/ajpelu/ajpeluR/blob/master/prueba/trend_past_climate.md)
 
 --- .quote
 
@@ -502,6 +540,8 @@ git pull origin master
 
 * Chacon S & Straub (2014) ProGit book. Apress [pdf](http://git-scm.com/book/en/v2) 
 
+* FitzJohn R, Pennell M, Zanne A and Cornwell W (2014) Reproducible research is still a challenge. [link](http://ropensci.org/blog/2014/06/09/reproducibility/) 
+
 * Gandrud C (2014) Reproducible research with r and rstudio. R Series. Chapman & Hall/CRC. 
 
 * King G (1995) Replication, replication. PS: Political Science and Politics, 28(3): 444 - 452. doi:  [10.2307/420301](http://dx.doi.org/10.2307/420301)
@@ -512,16 +552,24 @@ git pull origin master
 
 * Piwowar HA, Day RS, Fridsma DB (2007) Sharing detailed research data is associated with increased citation rate. PLoS ONE 2(3): e308. doi: [10.1371/journal.pone.0000308](http://dx.doi.org/10.1371/journal.pone.0000308)
 
-* Sandve GK, Nekrutenko A, Taylor J, Hovig E (2013) Ten Simple Rules for Reproducible Computational Research. PLoS Comput Biol 9(10): e1003285. doi: [10.1371/journal.pcbi.1003285](https://dx.doi.org/10.1371/journal.pcbi.1003285)
-
 --- .smaller
 # References and Resources
+* Rodriguez-Sánchez F (2014) Reproducible Research with Rmarkdown. Data management, analysis, and paper writing all-in-one. [slides](http://pakillo.github.io/Rmarkdown_tutorial/)
+
+* Rodriguez-Sánchez F (2014) Reproducible Science with Rmarkdown [slides](Reproducible Science with Rmarkdown)
+
+* Sandve GK, Nekrutenko A, Taylor J, Hovig E (2013) Ten Simple Rules for Reproducible Computational Research. PLoS Comput Biol 9(10): e1003285. doi: [10.1371/journal.pcbi.1003285](https://dx.doi.org/10.1371/journal.pcbi.1003285)
+
 * Stodden V (2009) The legal framework for reproducible scientific research. Computing in Science & Engineering, 11(1): 35 - 40. doi: [10.1109/MCSE.2009.19](http://dx.doi.org/10.1109/MCSE.2009.19)
+
 * Wolkovich EM, Regetz J & O'Connor MI (2012) Advances in global change research require open science at the individual-level. Global Change Biology, 18, 2102?2110, doi: [10.1111/j.1365-2486.2012.02693.x](https://dx.doi.org/10.1111/j.1365-2486.2012.02693.x)
+
 * Reproducibility in Science. A Guide to enhancing reproducibility in scientific results and writing. [R-OpenSci et al](http://ropensci.github.io/reproducibility-guide/)  
+
 * [Reproducible Science Curriculum](https://coggle.it/diagram/548607a4d215ff3b06948849/0353189d659223de746d754b8d10bca50186a23b2c5bc183a7e195ea4efa2944)
 
-
+--- 
+![](images/end.png)
 
 
 
